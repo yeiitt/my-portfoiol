@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>桌面循環扇不佔位、免組裝，搬家帶走也輕鬆｜商品著陸頁</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    
+      :root {
+        --panel-bg: #f3f4f6;
+        --panel-border: #e5e7eb;
+        --panel-radius: 16px;
+        --panel-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+       {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 16px 32px;
+      }
+
+      .page-header {
+        margin-bottom: 18px;
+      }
+
+      .page-title {
+        font-size: 1.6rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .page-title i {
+        color: #6366f1;
+      }
+
+      .page-subtitle {
+        font-size: 0.95rem;
+        color: #6b7280;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .panel {
+        background: #f9fafb;
+        border-radius: var(--panel-radius);
+        border: 1px solid var(--panel-border);
+        box-shadow: var(--panel-shadow);
+        padding: 16px 16px 18px;
+      }
+
+      .panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .panel-title {
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .panel-title i {
+        color: #4f46e5;
+      }
+
+      .panel-sub {
+        font-size: 0.82rem;
+        color: #9ca3af;
+      }
+
+      /* 左側設定表單 */
+      .form-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .form-row-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .form-row-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      label {
+        font-size: 0.8rem;
+        color: #4b5563;
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="url"],
+      textarea {
+        font-family: inherit;
+        font-size: 0.86rem;
+        padding: 7px 9px;
+        border-radius: 9px;
+        border: 1px solid #d1d5db;
+        background: #ffffff;
+        outline: none;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="url"]:focus,
+      textarea:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.5);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 54px;
+        max-height: 140px;
+      }
+
+      .color-input-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .color-input-row input[type="color"] {
+        width: 38px;
+        height: 28px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        padding: 0;
+        background: transparent;
+      }
+
+      .hint {
+        font-size: 0.75rem;
+        color: #9ca3af;
+      }
+
+      .btn-row {
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-size: 0.86rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+      }
+
+      .btn-secondary {
+        background: #e5e7eb;
+        color: #374151;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 12px 26px rgba(79, 70, 229, 0.35);
+      }
+
+      .btn-primary i {
+        font-size: 0.9rem;
+      }
+
+      /* 右側預覽包裝 */
+      .preview-wrapper {
+        background: #111827;
+        border-radius: var(--panel-radius);
+        border: 1px solid #1f2937;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.45);
+        padding: 10px;
+        color: #e5e7eb;
+      }
+
+      .preview-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        font-size: 0.8rem;
+        color: #9ca3af;
+      }
+
+      .preview-dots {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+
+      .preview-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: #4b5563;
+      }
+
+      .preview-inner {
+        background: #f3f4f6;
+        border-radius: 12px;
+        overflow: auto;
+        max-height: 620px;
+        border: 1px solid #e5e7eb;
+        padding: 0;
+      }
+
+      #previewLanding {
+        min-height: 560px;
+      }
+
+      /* 下方輸出程式碼區塊 */
+      .code-panel {
+        margin-top: 8px;
+      }
+
+      .code-panel textarea {
+        width: 100%;
+        min-height: 220px;
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.78rem;
+        background: #020617;
+        color: #e5e7eb;
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid #1e293b;
+        resize: vertical;
+        white-space: pre;
+        overflow: auto;
+      }
+
+      .code-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        font-size: 0.82rem;
+        color: #6b7280;
+      }
+
+      .copy-badge {
+        font-size: 0.75rem;
+        background: #e5e7eb;
+        color: #374151;
+        padding: 3px 9px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .copy-badge i {
+        color: #22c55e;
+      }
+
+      .btn-ghost {
+        background: #111827;
+        color: #e5e7eb;
+        border-radius: 999px;
+        border: 1px solid #4b5563;
+        padding: 5px 12px;
+        font-size: 0.78rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-ghost i {
+        font-size: 0.82rem;
+      }
+
+      .footer-note {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: #9ca3af;
+        text-align: right;
+      }
+
+      /* -------- Landing Page 樣板樣式（預覽 + 產出用） -------- */
+
+      .lp-root {
+        --primary: #667eea;
+        --secondary: #764ba2;
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        --bg-light: #f5f5fb;
+        --text-main: #1f2430;
+        --text-muted: #6b7280;
+        --card-radius: 18px;
+        --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.12);
+
+        font-family: "Noto Sans TC", sans-serif;
+        background: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      .lp-root img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .lp-root a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .lp-container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .lp-header {
+        background: rgba(245, 245, 251, 0.9);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      }
+
+      .lp-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      .lp-nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--primary);
+      }
+
+      .lp-nav-logo i {
+        font-size: 1.2rem;
+      }
+
+      .lp-nav-links {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      .lp-nav-links a {
+        position: relative;
+        padding-bottom: 3px;
+      }
+
+      .lp-nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--gradient);
+        transition: width 0.25s ease;
+      }
+
+      .lp-nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .lp-nav-cta {
+        padding: 7px 14px;
+        border-radius: 999px;
+        background: var(--gradient);
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+
+      .lp-nav-cta i {
+        font-size: 0.9rem;
+      }
+
+      .lp-hero {
+        background: var(--gradient);
+        color: #fff;
+        padding: 36px 0 42px;
+      }
+
+      .lp-hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: center;
+      }
+
+      .lp-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 11px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.16);
+        font-size: 0.82rem;
+        margin-bottom: 10px;
+      }
+
+      .lp-hero-badge span {
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        font-weight: 600;
+        font-size: 0.78rem;
+      }
+
+      .lp-hero-title {
+        font-size: 1.9rem;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+
+      .lp-hero-subtitle {
+        font-size: 0.95rem;
+        color: rgba(241, 245, 249, 0.9);
+        margin-bottom: 16px;
+      }
+
+      .lp-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .lp-price-current {
+        font-size: 1.6rem;
+        font-weight: 800;
+      }
+
+      .lp-price-original {
+        font-size: 0.9rem;
+        color: rgba(226, 232, 240, 0.85);
+        text-decoration: line-through;
+      }
+
+      .lp-price-tag {
+        font-size: 0.8rem;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.2);
+      }
+
+      .lp-hero-list {
+        list-style: none;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+
+      .lp-hero-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .lp-hero-list i {
+        color: #c7d2fe;
+        font-size: 0.9rem;
+      }
+
+      .lp-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .lp-btn-primary {
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: #fff;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 16px 35px rgba(15, 23, 42, 0.35);
+      }
+
+      .lp-btn-ghost {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(226, 232, 240, 0.7);
+        background: transparent;
+        color: #e5e7eb;
+        font-size: 0.88rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .lp-hero-meta {
+        margin-top: 6px;
+        font-size: 0.8rem;
+        color: rgba(226, 232, 240, 0.88);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .lp-hero-image-wrapper {
+        background: rgba(15, 23, 42, 0.24);
+        padding: 12px;
+        border-radius: 18px;
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.55);
+      }
+
+      .lp-hero-image {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+      }
+
+      .lp-hero-image-caption {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: rgba(226, 232, 240, 0.88);
+        display: flex;
+        justify-content: space-between;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .lp-section {
+        padding: 36px 0;
+      }
+
+      .lp-section-header {
+        text-align: center;
+        margin-bottom: 22px;
+      }
+
+      .lp-section-eyebrow {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--primary);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+
+      .lp-section-title {
+        font-size: 1.35rem;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .lp-section-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        max-width: 580px;
+        margin: 0 auto;
+      }
+
+      .lp-pain-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 6px;
+      }
+
+      .lp-pain-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-soft);
+        padding: 16px 14px 18px;
+        font-size: 0.86rem;
+      }
+
+      .lp-pain-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        background: rgba(102, 126, 234, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
+      .lp-pain-title {
+        font-weight: 700;
+        font-size: 0.98rem;
+        margin-bottom: 4px;
+      }
+
+      .lp-pain-text {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .lp-features-section {
+        background: #fff;
+      }
+
+      .lp-features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 6px;
+      }
+
+      .lp-feature-card {
+        background: #f9fafb;
+        border-radius: var(--card-radius);
+        padding: 16px 14px 18px;
+        box-shadow: 0 12px 26px rgba(148, 163, 184, 0.22);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.88rem;
+      }
+
+      .lp-feature-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        background: var(--gradient);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+
+      .lp-feature-title {
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .lp-feature-text {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .lp-specs-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .lp-specs-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-soft);
+        padding: 18px 16px;
+        font-size: 0.88rem;
+      }
+
+      .lp-specs-card h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
+
+      .lp-specs-list {
+        list-style: none;
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+
+      .lp-specs-list li {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 5px;
+      }
+
+      .lp-specs-list i {
+        margin-top: 3px;
+        color: var(--primary);
+        font-size: 0.8rem;
+      }
+
+      .lp-specs-highlight {
+        margin-top: 8px;
+        padding: 8px 9px;
+        border-radius: 11px;
+        background: rgba(102, 126, 234, 0.08);
+        font-size: 0.84rem;
+        color: var(--text-main);
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .lp-specs-taglist {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .lp-specs-tag {
+        font-size: 0.78rem;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #eef2ff;
+        color: var(--primary);
+        border: 1px solid rgba(129, 140, 248, 0.5);
+      }
+
+      .lp-specs-image-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-soft);
+        padding: 12px 12px 14px;
+        font-size: 0.84rem;
+        color: var(--text-muted);
+      }
+
+      .lp-testimonials-section {
+        background: #f1f5f9;
+      }
+
+      .lp-testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .lp-testimonial-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        padding: 14px 14px 16px;
+        box-shadow: 0 14px 32px rgba(148, 163, 184, 0.32);
+        font-size: 0.86rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .lp-testimonial-quote {
+        position: absolute;
+        right: 12px;
+        top: 6px;
+        font-size: 2rem;
+        color: rgba(148, 163, 184, 0.25);
+      }
+
+      .lp-testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .lp-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .lp-testimonial-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .lp-testimonial-role {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .lp-testimonial-rating {
+        font-size: 0.78rem;
+        color: #f97316;
+        margin-bottom: 4px;
+      }
+
+      .lp-final-cta {
+        padding: 34px 0 40px;
+      }
+
+      .lp-final-cta-inner {
+        background: var(--gradient);
+        border-radius: 22px;
+        padding: 22px 16px;
+        box-shadow: 0 26px 55px rgba(88, 28, 135, 0.55);
+        color: #fff;
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+        gap: 18px;
+        align-items: center;
+        font-size: 0.9rem;
+      }
+
+      .lp-final-cta-title {
+        font-size: 1.35rem;
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+
+      .lp-final-cta-desc {
+        font-size: 0.9rem;
+        color: rgba(241, 245, 249, 0.9);
+        margin-bottom: 8px;
+      }
+
+      .lp-btn-final {
+        padding: 11px 20px;
+        border-radius: 999px;
+        background: #fff;
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 0.95rem;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
+        margin-bottom: 5px;
+      }
+
+      .lp-btn-final-sub {
+        font-size: 0.8rem;
+        color: rgba(241, 245, 249, 0.9);
+      }
+
+      .lp-final-cta-meta {
+        font-size: 0.8rem;
+        color: rgba(226, 232, 240, 0.95);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .lp-final-cta-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .lp-final-cta-pricebox {
+        text-align: right;
+        font-size: 0.86rem;
+      }
+
+      .lp-final-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.2);
+        font-size: 0.78rem;
+        margin-bottom: 4px;
+      }
+
+      .lp-final-cta-price-now {
+        font-size: 1.35rem;
+        font-weight: 900;
+      }
+
+      .lp-final-cta-price-original {
+        font-size: 0.86rem;
+        text-decoration: line-through;
+        color: rgba(209, 213, 219, 0.95);
+      }
+
+      .lp-footer {
+        padding: 16px 0 22px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-align: center;
+      }
+
+      .lp-footer span {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      /* RWD */
+      @media (max-width: 1040px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .lp-hero-inner,
+        .lp-specs-grid,
+        .lp-final-cta-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .lp-final-cta-pricebox {
+          text-align: left;
+        }
+
+        .lp-nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .lp-pain-grid,
+        .lp-features-grid,
+        .lp-testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .lp-hero {
+          padding: 26px 0 32px;
+        }
+
+        .lp-hero-inner {
+          gap: 20px;
+        }
+
+        .lp-section-title {
+          font-size: 1.2rem;
+        }
+
+        .lp-final-cta-inner {
+          padding: 20px 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .lp-container {
+          padding: 0 16px;
+        }
+
+        .lp-btn-primary,
+        .lp-btn-ghost,
+        .lp-nav-cta,
+        .lp-btn-final {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .lp-hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+    
+    /* 僅保留 lp-root 相關樣式，用於獨立頁面 */
+    body { margin: 0; }
+  </style>
+</head>
+<body class="lp-root" style="--primary:#ff6b6b;--secondary:#feca57;--gradient:linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)">
+  
+<header class="lp-header">
+  <nav class="lp-nav">
+    <div class="lp-nav-logo">
+      <i class="fa-solid fa-bolt"></i>
+      <span>Product Landing</span>
+    </div>
+    <div class="lp-nav-links">
+      <a href="#pain">痛點說明</a>
+      <a href="#features">商品特色</a>
+      <a href="#specs">詳情規格</a>
+      <a href="#reviews">顧客評價</a>
+    </div>
+    <button class="lp-nav-cta" onclick="document.getElementById('final-cta').scrollIntoView({behavior:'smooth'})">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <a class="lp-btn-final" href="https://cc5.ocu.edu.tw/wu/shopee_integrated/platform/shop_settings.php" target="_blank" rel="noopener">立刻改善套房通風</a>
+    </button>
+  </nav>
+</header>
+
+<section class="lp-hero">
+  <div class="lp-container lp-hero-inner">
+    <div>
+      <div class="lp-hero-badge">
+        <i class="fa-solid fa-star"></i>
+        熱門商品 · <span>示範用套版</span>
+      </div>
+      <h1 class="lp-hero-title">桌面循環扇不佔位、免組裝，搬家帶走也輕鬆</h1>
+      <p class="lp-hero-subtitle">
+        USB 供電三段風速桌面循環扇，給想讓租屋處空氣流通的租屋族與小資族
+      </p>
+
+      <div class="lp-price-row">
+        <div class="lp-price-current">NT$599</div>
+        <div class="lp-price-original">NT$799</div>
+        <div class="lp-price-tag">新店開幕免運優惠，再送 30 元回購折價券</div>
+      </div>
+
+      <ul class="lp-hero-list">
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          搭冷氣與清淨機加速對流，套房更快涼爽
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          桌面級免組裝不佔位，租屋搬家帶著走
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          附遙控定時與三段風速，坐著躺著都能調
+        </li>
+      </ul>
+
+      <div class="lp-hero-actions">
+        <button class="lp-btn-primary" onclick="document.getElementById('final-cta').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-bolt"></i>
+          <a class="lp-btn-final" href="https://cc5.ocu.edu.tw/wu/shopee_integrated/platform/shop_settings.php" target="_blank" rel="noopener">立刻改善套房通風</a>
+        </button>
+        <button class="lp-btn-ghost" onclick="document.getElementById('specs').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-circle-info"></i>
+          查看商品詳情
+        </button>
+      </div>
+
+      <div class="lp-hero-meta">
+        <span><i class="fa-solid fa-user-group"></i> 目標客群：租屋族、小資族</span>
+      </div>
+    </div>
+
+    <div class="lp-hero-image-wrapper">
+      <div class="lp-hero-image">
+        <img src="hero.jpg" alt="商品主圖">
+      </div>
+      <div class="lp-hero-image-caption">
+        <span><i class="fa-solid fa-image"></i> Hero 示意圖，可在產出的 HTML 中替換為正式圖片。</span>
+        <span><i class="fa-solid fa-mobile-screen-button"></i> RWD 版型，可在各種裝置良好顯示。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pain" class="lp-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">CUSTOMER PAIN POINTS</div>
+      <h2 class="lp-section-title">你的顧客，是否也遇到這些情況？</h2>
+      <p class="lp-section-desc">
+        你可以在產出的 HTML 中，用更貼近產品的語言重新撰寫這段說明。
+      </p>
+    </div>
+
+    <div class="lp-pain-grid">
+      <div class="lp-pain-card">
+        <div class="lp-pain-icon">
+          <i class="fa-solid fa-circle-question"></i>
+        </div>
+        <div class="lp-pain-title">資訊太多，難以做出決定</div>
+        <p class="lp-pain-text">
+          面對眾多方案與產品，顧客不容易快速看出差異與關鍵價值，常常因此延後購買決策。
+        </p>
+      </div>
+      <div class="lp-pain-card">
+        <div class="lp-pain-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <div class="lp-pain-title">沒有時間慢慢比較與研究</div>
+        <p class="lp-pain-text">
+          生活忙碌，很難花大量時間自行搜尋、比價或整理資訊，需要有人幫他們做出清楚整理。
+        </p>
+      </div>
+      <div class="lp-pain-card">
+        <div class="lp-pain-icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="lp-pain-title">害怕踩雷，缺乏信任感</div>
+        <p class="lp-pain-text">
+          顧客擔心內容不符合期待、售後沒保障，因此需要更多實際案例與評價來建立信任。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="lp-section lp-features-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">PRODUCT FEATURES</div>
+      <h2 class="lp-section-title">為什麼這個商品適合你？</h2>
+      <p class="lp-section-desc">
+        下方是範例說明，你可以在產生的 HTML 中調整文字，搭配實際商品定位。
+      </p>
+    </div>
+
+    <div class="lp-features-grid">
+      <div class="lp-feature-card">
+        <div class="lp-feature-icon">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="lp-feature-title">結構清楚，一目了然</div>
+        <div class="lp-feature-text">
+          將商品的核心內容分成幾個清楚區塊呈現，讓顧客可以快速掌握重點，不再被長篇文字淹沒。
+        </div>
+      </div>
+      <div class="lp-feature-card">
+        <div class="lp-feature-icon">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="lp-feature-title">視覺簡潔，強調重點</div>
+        <div class="lp-feature-text">
+          使用現代化版面與漸層色彩，搭配簡潔圖示與卡片式設計，讓你的商品看起來更有專業與信任感。
+        </div>
+      </div>
+      <div class="lp-feature-card">
+        <div class="lp-feature-icon">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+        <div class="lp-feature-title">響應式設計，裝置通用</div>
+        <div class="lp-feature-text">
+          預設支援手機、平板與桌機版面，無論顧客從哪一種裝置開啟，都能有良好的閱讀與操作體驗。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specs" class="lp-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">DETAILS &amp; SPECS</div>
+      <h2 class="lp-section-title">商品詳情與規格說明</h2>
+      <p class="lp-section-desc">
+        這裡可以放商品規格、內容物、服務範圍、使用方式等，協助顧客做出購買決定。
+      </p>
+    </div>
+
+    <div class="lp-specs-grid">
+      <div class="lp-specs-card">
+        <h3><i class="fa-solid fa-book-open-reader"></i> 商品資訊（示意）</h3>
+        <ul class="lp-specs-list">
+          <li>
+            <i class="fa-solid fa-circle-dot"></i>
+            <span>商品名稱：桌面循環扇不佔位、免組裝，搬家帶走也輕鬆</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-dot"></i>
+            <span>適用對象：租屋族、小資族</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-dot"></i>
+            <span>核心特色：搭冷氣與清淨機加速對流，套房更快涼爽</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-dot"></i>
+            <span>更多亮點：桌面級免組裝不佔位，租屋搬家帶著走</span>
+          </li>
+        </ul>
+
+        <div class="lp-specs-highlight">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <div>
+            提示：你可以在這裡補充購買須知、使用限制、服務時間或保固條款等資訊，協助顧客做出更安心的決定。
+          </div>
+        </div>
+
+        <div class="lp-specs-taglist">
+          <span class="lp-specs-tag">重點清楚</span>
+          <span class="lp-specs-tag">適合行銷頁面</span>
+          <span class="lp-specs-tag">可自由再編輯</span>
+        </div>
+      </div>
+
+      <div class="lp-specs-image-card">
+        <img src="detail.jpg" alt="詳情區示意圖">
+        <p>
+          此區塊示意可用圖片、流程圖、示意圖等方式補充商品細節。實際使用時，可在產出的 HTML 中改成你的圖片與說明文字。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="lp-section lp-testimonials-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">CUSTOMER REVIEWS</div>
+      <h2 class="lp-section-title">顧客怎麼說？（示意）</h2>
+      <p class="lp-section-desc">
+        下列為假資料，只作為版面示範。實際上可以替換成真實顧客回饋或學員評價。
+      </p>
+    </div>
+
+    <div class="lp-testimonials-grid">
+      <div class="lp-testimonial-card">
+        <div class="lp-testimonial-quote">“</div>
+        <div class="lp-testimonial-header">
+          <div class="lp-avatar">A</div>
+          <div>
+            <div class="lp-testimonial-name">小安</div>
+            <div class="lp-testimonial-role">一般消費者</div>
+          </div>
+        </div>
+        <div class="lp-testimonial-rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+          4.8 / 5.0
+        </div>
+        <p>
+          頁面資訊很清楚，不用滑太久就知道重點是什麼，讓我比較容易做決定。
+        </p>
+      </div>
+
+      <div class="lp-testimonial-card">
+        <div class="lp-testimonial-quote">“</div>
+        <div class="lp-testimonial-header">
+          <div class="lp-avatar">B</div>
+          <div>
+            <div class="lp-testimonial-name">Berry</div>
+            <div class="lp-testimonial-role">線上課程學員</div>
+          </div>
+        </div>
+        <div class="lp-testimonial-rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          5.0 / 5.0
+        </div>
+        <p>
+          我把這個版型改成自己的產品頁，搭配原本的照片和文案，整體看起來專業很多，也比較有「品牌感」。
+        </p>
+      </div>
+
+      <div class="lp-testimonial-card">
+        <div class="lp-testimonial-quote">“</div>
+        <div class="lp-testimonial-header">
+          <div class="lp-avatar">C</div>
+          <div>
+            <div class="lp-testimonial-name">Chris</div>
+            <div class="lp-testimonial-role">中小企業主</div>
+          </div>
+        </div>
+        <div class="lp-testimonial-rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          5.0 / 5.0
+        </div>
+        <p>
+          對我們來說，這種單頁式的介紹比傳統多頁網站更好用，也比較容易在廣告或社群貼文中導流。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="final-cta" class="lp-final-cta">
+  <div class="lp-container">
+    <div class="lp-final-cta-inner">
+      <div>
+        <div class="lp-final-cta-title">準備好讓你的商品被看見了嗎？</div>
+        <p class="lp-final-cta-desc">
+          這個 Landing Page 模板可以快速套用到各種產品、課程或服務上，只要換掉文字與圖片，就能用一致的風格呈現專業形象。
+        </p>
+        <button class="lp-btn-final">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <a class="lp-btn-final" href="https://cc5.ocu.edu.tw/wu/shopee_integrated/platform/shop_settings.php" target="_blank" rel="noopener">立刻改善套房通風</a>
+        </button>
+        <div class="lp-btn-final-sub">
+          （本區為示意文案，實際使用時可改成你的促銷方案、購買流程或報名方式說明）
+        </div>
+        <div class="lp-final-cta-meta">
+          <span><i class="fa-solid fa-shield-heart"></i> 支援手機 / 平板 / 桌機</span>
+          <span><i class="fa-solid fa-wand-magic-sparkles"></i> 結構清楚，方便後續擴充</span>
+        </div>
+      </div>
+      <div class="lp-final-cta-pricebox">
+        <div class="lp-final-cta-badge">
+          <i class="fa-solid fa-fire"></i>
+          示意：限時優惠
+        </div>
+        <div class="lp-final-cta-price-now">NT$599</div>
+        <div class="lp-final-cta-price-original">NT$799</div>
+        <div class="lp-btn-final-sub">
+          寫給目標客群：租屋族、小資族
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  © 2026 <span>Landing Template</span> · 本頁為產生器預覽畫面，正式頁面請以輸出 HTML 為準。
+</footer>
+
+</body>
+</html>
